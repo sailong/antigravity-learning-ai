@@ -1,0 +1,66 @@
+{
+  "project_name": "呼伦贝尔市鄂温克旗不动产外包项目",
+  "sales_manager": "李壮",
+  "project_leader": "李壮",
+  "contract_amount": 158000,
+  "contract_period": "2025-10-24～2026-01-23",
+  "payment_terms": "一次性付款",
+  "budget_profit_margin": 8.56,
+  "amount_paid": 0,
+  "amount_due": 158000,
+  "amount_spent": 62260.93,
+  "contract_profit": -62260.93,
+  "amount_pending": 82217.96,
+  "cost_categories": [
+    {
+      "category": "人工",
+      "budget": 38268.14,
+      "actual": 16617.68,
+      "variance": -21650.46
+    },
+    {
+      "category": "工资",
+      "budget": 25203.98,
+      "actual": 0,
+      "variance": -25203.98
+    },
+    {
+      "category": "社保",
+      "budget": 12152.16,
+      "actual": 0,
+      "variance": -12152.16
+    },
+    {
+      "category": "公积金",
+      "budget": 912,
+      "actual": 0,
+      "variance": -912
+    },
+    {
+      "category": "个人所得税",
+      "budget": 0,
+      "actual": 0,
+      "variance": 0
+    },
+    {
+      "category": "奖金（年终/日常绩效评优）",
+      "budget": 0,
+      "actual": 0,
+      "variance": 0
+    },
+    {
+      "category": "生育津贴",
+      "budget": 0,
+      "actual": 0,
+      "variance": 0
+    },
+    {
+      "category": "经济补偿金（风险计提金）",
+      "budget": 0,
+      "actual": 0,
+      "variance": 0
+    }
+  ],
+  "execution_rate": 40.0,
+  "risk_assessment": "严重亏损、资金未回款、执行严重滞后"
+}

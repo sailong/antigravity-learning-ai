@@ -1,0 +1,38 @@
+{
+  "project_name": "呼伦贝尔市级项目",
+  "sales_manager": "杨丽雪",
+  "project_manager": "杨丽雪",
+  "contract_amount": 6000000,
+  "already_received_payment": 1500006,
+  "pending_payment": 1499994,
+  "already_spent": 4200684.5,
+  "contract_profit": -2700678.5,
+  "budgeted_profit_rate": 68.8,
+  "execution_rate": 70.01,
+  "cost_categories": [
+    {
+      "category": "人工",
+      "budget": 1691110,
+      "actual": 0,
+      "variance": -1691110
+    },
+    {
+      "category": "工资",
+      "budget": 1000000,
+      "actual": 0,
+      "variance": -1000000
+    },
+    {
+      "category": "其他",
+      "budget": 100000,
+      "actual": 0,
+      "variance": -100000
+    },
+    {
+      "category": "其他",
+      "budget": 10000,
+      "actual": 0,
+      "variance": -10000
+    }
+  ]
+}

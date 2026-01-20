@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目分析报告 Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Marked.js for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #f3f4f6; }
+        .markdown-body h1 { font-size: 2.25rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; }
+        .markdown-body h2 { font-size: 1.5rem; font-weight: 600; margin-top: 2rem; margin-bottom: 1rem; color: #374151; border-bottom: 2px solid #e5e7eb; padding-bottom: 0.5rem; }
+        .markdown-body h3 { font-size: 1.25rem; font-weight: 600; margin-top: 1.5rem; margin-bottom: 0.75rem; color: #4b5563; }
+        .markdown-body p { margin-bottom: 1rem; line-height: 1.75; color: #4b5563; }
+        .markdown-body ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1rem; color: #4b5563; }
+        .markdown-body li { margin-bottom: 0.5rem; }
+        .markdown-body table { width: 100%; border-collapse: collapse; margin-bottom: 1.5rem; }
+        .markdown-body th, .markdown-body td { border: 1px solid #e5e7eb; padding: 0.75rem; text-align: left; }
+        .markdown-body th { background-color: #f9fafb; font-weight: 600; }
+        .markdown-body blockquote { border-left: 4px solid #3b82f6; padding-left: 1rem; font-style: italic; color: #6b7280; background-color: #eff6ff; padding: 1rem; border-radius: 0.25rem; }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="min-h-screen flex flex-col">
+        <!-- Header -->
+        <header class="bg-white shadow-sm border-b border-gray-200 sticky top-0 z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+                <div class="flex items-center">
+                    <span class="text-2xl mr-2">📊</span>
+                    <h1 class="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-600">智能分析 Dashboard</h1>
+                </div>
+                <div class="text-sm text-gray-500">生成时间: <span id="current-time"></span></div>
+            </div>
+        </header>
+
+        <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
+            
+            <!-- Main Content: Report -->
+            <div class="space-y-8">
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100">
+                    <div class="p-8">
+                        <div id="report-content" class="markdown-body">
+                            <!-- Markdown content will be rendered here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inline Charts Section -->
+                <div class="bg-white rounded-xl shadow-lg border border-gray-100 p-8">
+                    <h2 class="text-2xl font-bold text-gray-800 mb-6 border-l-4 border-blue-600 pl-4">📊 可视化图表分析</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <h3 class="text-lg font-semibold mb-2 text-gray-700">图表预览: chart_1.png</h3>
+            <img src="./chart_1.png" alt="chart_1.png" class="w-full h-auto rounded-md border border-gray-100">
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <h3 class="text-lg font-semibold mb-2 text-gray-700">图表预览: chart_2.png</h3>
+            <img src="./chart_2.png" alt="chart_2.png" class="w-full h-auto rounded-md border border-gray-100">
+        </div>
+        
+        <div class="bg-white p-4 rounded-lg shadow-md mb-6">
+            <h3 class="text-lg font-semibold mb-2 text-gray-700">图表预览: chart_3.png</h3>
+            <img src="./chart_3.png" alt="chart_3.png" class="w-full h-auto rounded-md border border-gray-100">
+        </div>
+        
+                    </div>
+                    
+                </div>
+
+                <!-- Attachments & Data (Moved from Sidebar) -->
+                <div class="bg-gray-50 rounded-xl border border-gray-200 p-6">
+                    <details class="group">
+                        <summary class="flex justify-between items-center font-medium cursor-pointer list-none">
+                            <span class="text-lg font-bold text-gray-700">📂 附件与原始数据</span>
+                            <span class="transition group-open:rotate-180">
+                                <svg fill="none" height="24" shape-rendering="geometricPrecision" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" viewBox="0 0 24 24" width="24"><path d="M6 9l6 6 6-6"></path></svg>
+                            </span>
+                        </summary>
+                        <div class="text-neutral-600 mt-3 group-open:animate-fadeIn">
+                            
+                            <!-- Download Links -->
+                            <div class="mb-6">
+                                <h3 class="font-semibold mb-3 text-gray-600">资源下载</h3>
+                                <ul class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                                    <li>
+                                        <a href="./analysis_data.json" download class="block bg-white border border-gray-200 hover:border-blue-500 hover:text-blue-600 transition px-4 py-2 rounded-lg text-sm flex items-center justify-between">
+                                            <span>📄 JSON 数据</span>
+                                            <span>↓</span>
+                                        </a>
+                                    </li>
+                                    
+                                    <li>
+                                        <a href="./chart_1.png" download class="block bg-white border border-gray-200 hover:border-blue-500 hover:text-blue-600 transition px-4 py-2 rounded-lg text-sm flex items-center justify-between">
+                                            <span>📊 chart_1.png</span>
+                                            <span>↓</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./chart_2.png" download class="block bg-white border border-gray-200 hover:border-blue-500 hover:text-blue-600 transition px-4 py-2 rounded-lg text-sm flex items-center justify-between">
+                                            <span>📊 chart_2.png</span>
+                                            <span>↓</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="./chart_3.png" download class="block bg-white border border-gray-200 hover:border-blue-500 hover:text-blue-600 transition px-4 py-2 rounded-lg text-sm flex items-center justify-between">
+                                            <span>📊 chart_3.png</span>
+                                            <span>↓</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- JSON Preview -->
+                            <div>
+                                <h3 class="font-semibold mb-3 text-gray-600">JSON 数据预览</h3>
+                                <div class="bg-gray-800 rounded-lg p-4 overflow-auto max-h-60 text-xs font-mono text-green-400 border border-gray-700">
+                                    <pre id="json-viewer"></pre>
+                                </div>
+                            </div>
+
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+        </main>
+'''
+
+        <footer class="bg-white border-t border-gray-200 mt-auto">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+                <p class="text-center text-sm text-gray-400">
+                    Generated by Antigravity AI Analysis Agent
+                </p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Data Injection
+        const mdContent = "# \u547c\u4f26\u8d1d\u5c14\u5e02\u9102\u6e29\u514b\u65d7\u4e0d\u52a8\u4ea7\u5916\u5305\u9879\u76ee\u6267\u884c\u6570\u636e\u5206\u6790\u62a5\u544a\n\n## 1. \u9879\u76ee\u6838\u5fc3\u6982\u51b5\n- **\u9879\u76ee\u89c4\u6a21**\uff1a\u5408\u540c\u91d1\u989d15.8\u4e07\u5143\uff0c\u5c5e\u4e8e\u4e2d\u5c0f\u578b\u9879\u76ee\u3002\n- **\u7ba1\u7406\u56e2\u961f**\uff1a\u9879\u76ee\u8d1f\u8d23\u4eba\u4e0e\u9500\u552e\u7ecf\u7406\u5747\u4e3a\u674e\u58ee\uff0c\u7ba1\u7406\u7ed3\u6784\u5355\u4e00\uff0c\u9700\u52a0\u5f3a\u5206\u5de5\u4e0e\u76d1\u7763\u3002\n- **\u6210\u672c\u7ed3\u6784**\uff1a\u51718\u9879\u6210\u672c\u7c7b\u522b\uff0c\u4ee5\u4eba\u5de5\u6210\u672c\u4e3a\u4e3b\uff0c\u4f46\u5b9e\u9645\u652f\u51fa\u4e25\u91cd\u4f4e\u4e8e\u9884\u7b97\uff0c\u5b58\u5728\u5927\u91cf\u672a\u6267\u884c\u6210\u672c\u3002\n\n## 2. \u5173\u952e\u8d22\u52a1\u6307\u6807\u5206\u6790\n### 2.1 \u6838\u5fc3\u8d22\u52a1\u6570\u636e\n- **\u5408\u540c\u91d1\u989d**\uff1a15.8\u4e07\u5143\uff08\u6b63\u5e38\uff09\n- **\u5df2\u56de\u6b3e\u91d1\u989d**\uff1a0\u4e07\u5143\uff08\u98ce\u9669\uff09\n- **\u5f85\u56de\u6b3e\u91d1\u989d**\uff1a15.8\u4e07\u5143\uff08\u98ce\u9669\uff09\n- **\u5df2\u652f\u51fa\u91d1\u989d**\uff1a6.226\u4e07\u5143\uff08\u504f\u4f4e\uff09\n- **\u5408\u540c\u5229\u6da6**\uff1a-6.226\u4e07\u5143\uff08\u4e25\u91cd\u4e8f\u635f\uff09\n\n### 2.2 \u9884\u7b97\u6267\u884c\u60c5\u51b5\n- **\u603b\u9884\u7b97\u91d1\u989d**\uff1a15.8\u4e07\u5143\n- **\u603b\u51b3\u7b97\u91d1\u989d**\uff1a6.226\u4e07\u5143\n- **\u6574\u4f53\u6267\u884c\u7387**\uff1a40.0%\uff08\u4e25\u91cd\u6ede\u540e\uff09\n- **\u652f\u51fa\u7279\u70b9**\uff1a\u4ec5\u4eba\u5de5\u7c7b\u6210\u672c\u6709\u652f\u51fa\uff0c\u5176\u4f59\u6210\u672c\u672a\u6267\u884c\uff0c\u5b58\u5728\u9884\u7b97\u6d6a\u8d39\u98ce\u9669\u3002\n\n## 3. \u6210\u672c\u7ed3\u6784\u5206\u6790\n### 3.1 \u4e3b\u8981\u6210\u672c\u6784\u6210 (TOP 5)\n1. \u4eba\u5de5\uff1a\u9884\u7b973.827\u4e07\u5143\uff0c\u5b9e\u9645\u652f\u51fa1.662\u4e07\u5143\uff0c\u5dee\u5f02-2.165\u4e07\u5143\n2. \u5de5\u8d44\uff1a\u9884\u7b972.520\u4e07\u5143\uff0c\u5b9e\u96450\uff0c\u5dee\u5f02-2.520\u4e07\u5143\n3. \u793e\u4fdd\uff1a\u9884\u7b971.215\u4e07\u5143\uff0c\u5b9e\u96450\uff0c\u5dee\u5f02-1.215\u4e07\u5143\n4. \u516c\u79ef\u91d1\uff1a\u9884\u7b970.091\u4e07\u5143\uff0c\u5b9e\u96450\uff0c\u5dee\u5f02-0.091\u4e07\u5143\n5. \u4e2a\u4eba\u6240\u5f97\u7a0e\uff1a\u9884\u7b970\uff0c\u5b9e\u96450\uff0c\u5dee\u5f020\n\n### 3.2 \u6210\u672c\u7ba1\u7406\u7279\u70b9\n- \u6210\u672c\u7ed3\u6784\u4ee5\u4eba\u5de5\u4e3a\u4e3b\uff0c\u4f46\u6267\u884c\u7387\u6781\u4f4e\uff0c\u5b58\u5728\u5927\u91cf\u9884\u7b97\u672a\u6267\u884c\u3002\n- \u672a\u6267\u884c\u6210\u672c\u4e3b\u8981\u96c6\u4e2d\u5728\u5de5\u8d44\u3001\u793e\u4fdd\u3001\u516c\u79ef\u91d1\u7b49\u521a\u6027\u652f\u51fa\uff0c\u53ef\u80fd\u56e0\u9879\u76ee\u672a\u542f\u52a8\u6216\u6267\u884c\u4e0d\u529b\u5bfc\u81f4\u3002\n\n## 4. \u98ce\u9669\u8bc6\u522b\u4e0e\u6838\u5fc3\u5efa\u8bae\n### 4.1 \u4e09\u5927\u6838\u5fc3\u98ce\u9669\n1. **\u8d22\u52a1\u98ce\u9669**\uff1a\u9879\u76ee\u5df2\u4e8f\u635f6.226\u4e07\u5143\uff0c\u4e14\u65e0\u4efb\u4f55\u56de\u6b3e\uff0c\u8d44\u91d1\u94fe\u9762\u4e34\u65ad\u88c2\u98ce\u9669\u3002\n2. **\u6267\u884c\u98ce\u9669**\uff1a\u9884\u7b97\u6267\u884c\u7387\u4ec540%\uff0c\u9879\u76ee\u8fdb\u5ea6\u4e25\u91cd\u6ede\u540e\uff0c\u53ef\u80fd\u5f71\u54cd\u4ea4\u4ed8\u4e0e\u5ba2\u6237\u6ee1\u610f\u5ea6\u3002\n3. **\u56de\u6b3e\u98ce\u9669**\uff1a\u5408\u540c\u7ea6\u5b9a\u4e00\u6b21\u6027\u4ed8\u6b3e\uff0c\u4f46\u81f3\u4eca\u672a\u56de\u6b3e\uff0c\u5b58\u5728\u91cd\u5927\u8d44\u91d1\u56de\u6536\u538b\u529b\u3002\n\n### 4.2 \u9488\u5bf9\u6027\u5efa\u8bae\n1. **\u8d22\u52a1\u98ce\u9669\u5e94\u5bf9**\uff1a\u7acb\u5373\u542f\u52a8\u8d44\u91d1\u5e94\u6025\u65b9\u6848\uff0c\u7533\u8bf7\u5185\u90e8\u57ab\u8d44\u6216\u8c03\u6574\u9884\u7b97\u7ed3\u6784\uff0c\u907f\u514d\u9879\u76ee\u5f7b\u5e95\u505c\u6ede\u3002\n2. **\u6267\u884c\u98ce\u9669\u5e94\u5bf9**\uff1a\u91cd\u65b0\u8bc4\u4f30\u9879\u76ee\u6267\u884c\u8ba1\u5212\uff0c\u660e\u786e\u5404\u9636\u6bb5\u4efb\u52a1\u4e0e\u8d23\u4efb\u4eba\uff0c\u786e\u4fdd\u57282026\u5e741\u6708\u524d\u5b8c\u6210\u4e3b\u8981\u4ea4\u4ed8\u5185\u5bb9\u3002\n3. **\u56de\u6b3e\u98ce\u9669\u5e94\u5bf9**\uff1a\u7acb\u5373\u4e0e\u5ba2\u6237\u6c9f\u901a\uff0c\u8981\u6c42\u57282025\u5e7412\u6708\u524d\u652f\u4ed8\u9996\u671f\u6b3e\u9879\uff0c\u6216\u534f\u5546\u5206\u671f\u4ed8\u6b3e\u65b9\u6848\u3002\n\n## 5. \u9879\u76ee\u98ce\u9669\u7ba1\u63a7\u884c\u52a8\u8ba1\u5212\n| \u98ce\u9669\u70b9 | \u5e94\u5bf9\u63aa\u65bd | \u8d23\u4efb\u4eba | \u65f6\u95f4\u8282\u70b9 | \u8003\u6838\u6807\u51c6 |\n|---|---|---|---|---|\n| \u9879\u76ee\u4e25\u91cd\u4e8f\u635f | \u7533\u8bf7\u5185\u90e8\u57ab\u8d44\u6216\u8c03\u6574\u9884\u7b97\u7ed3\u6784 | \u8d22\u52a1\u90e8 | 2025-11-30 | \u57ab\u8d44\u5230\u4f4d\u6216\u9884\u7b97\u8c03\u6574\u5b8c\u6210 |\n| \u6267\u884c\u4e25\u91cd\u6ede\u540e | \u91cd\u65b0\u5236\u5b9a\u6267\u884c\u8ba1\u5212\u5e76\u660e\u786e\u8d23\u4efb\u4eba | \u9879\u76ee\u7ecf\u7406 | 2025-11-15 | \u9879\u76ee\u8fdb\u5ea6\u8ba1\u5212\u901a\u8fc7\u5ba1\u6279 |\n| \u65e0\u56de\u6b3e\u98ce\u9669 | \u4e0e\u5ba2\u6237\u6c9f\u901a\u5e76\u8981\u6c42\u652f\u4ed8\u9996\u671f\u6b3e\u9879 | \u9500\u552e\u7ecf\u7406 | 2025-12-15 | \u5ba2\u6237\u786e\u8ba4\u4ed8\u6b3e\u8ba1\u5212 |\n\n## 6. \u540e\u7eed\u5efa\u8bae\n- \u7acb\u5373\u542f\u52a8\u98ce\u9669\u7ba1\u63a7\u63aa\u65bd\uff0c\u786e\u4fdd\u9879\u76ee\u8d44\u91d1\u94fe\u5b89\u5168\u3002\n- \u91cd\u65b0\u8bc4\u4f30\u9879\u76ee\u6267\u884c\u8ba1\u5212\uff0c\u786e\u4fdd\u57282026\u5e741\u6708\u524d\u5b8c\u6210\u4e3b\u8981\u4ea4\u4ed8\u5185\u5bb9\u3002\n- \u4e0e\u5ba2\u6237\u4fdd\u6301\u5bc6\u5207\u6c9f\u901a\uff0c\u786e\u4fdd\u56de\u6b3e\u8ba1\u5212\u843d\u5b9e\uff0c\u907f\u514d\u9879\u76ee\u5f7b\u5e95\u505c\u6ede\u3002\n\n## \ud83d\udcc2 \u751f\u6210\u6587\u4ef6\u6e05\u5355 (\u4e0b\u8f7d\u94fe\u63a5)\n- [\u6570\u636e\u6587\u4ef6 (JSON)](./analysis_data.json)\n- [\u56fe\u8868: chart_1.png](./chart_1.png)\n- [\u56fe\u8868: chart_2.png](./chart_2.png)\n- [\u56fe\u8868: chart_3.png](./chart_3.png)\n";
+        const jsonData = {"project_name": "呼伦贝尔市鄂温克旗不动产外包项目", "sales_manager": "李壮", "project_leader": "李壮", "contract_amount": 158000, "contract_period": "2025-10-24～2026-01-23", "payment_terms": "一次性付款", "budget_profit_margin": 8.56, "amount_paid": 0, "amount_due": 158000, "amount_spent": 62260.93, "contract_profit": -62260.93, "amount_pending": 82217.96, "cost_categories": [{"category": "人工", "budget": 38268.14, "actual": 16617.68, "variance": -21650.46}, {"category": "工资", "budget": 25203.98, "actual": 0, "variance": -25203.98}, {"category": "社保", "budget": 12152.16, "actual": 0, "variance": -12152.16}, {"category": "公积金", "budget": 912, "actual": 0, "variance": -912}, {"category": "个人所得税", "budget": 0, "actual": 0, "variance": 0}, {"category": "奖金（年终/日常绩效评优）", "budget": 0, "actual": 0, "variance": 0}, {"category": "生育津贴", "budget": 0, "actual": 0, "variance": 0}, {"category": "经济补偿金（风险计提金）", "budget": 0, "actual": 0, "variance": 0}], "execution_rate": 40.0, "risk_assessment": "严重亏损、资金未回款、执行严重滞后"};
+
+        // Render Markdown
+        document.getElementById('report-content').innerHTML = marked.parse(mdContent);
+
+        // Render JSON Preview (Pretty Print)
+        document.getElementById('json-viewer').textContent = JSON.stringify(jsonData, null, 2);
+
+        // Set Time
+        document.getElementById('current-time').textContent = new Date().toLocaleString('zh-CN');
+    </script>
+</body>
+</html>
+    
