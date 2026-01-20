@@ -73,6 +73,10 @@ export OPENAI_BASE_URL="https://api.deepseek.com/v1"
      export OPENAI_BASE_URL="http://localhost:1234/v1"
      ```
 
+   > 💡 **详细教程**：
+   > - [LM Studio 本地部署 Qwen 指南](./LM_Studio_Qwen_Guide.md)
+   > - [Antigravity 进阶使用技巧 16 则](./Antigravity_Usage_Tips.md)
+
 ---
 
 ## 🚀 快速开始
