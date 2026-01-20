@@ -1,4 +1,4 @@
-# Antigravity
+# Antigravity（更新中）
 
 Antigravity 是一个基于 Model Context Protocol (MCP) 的智能 Agent 学习与实验项目。本项目通过一系列循序渐进的课程（位于 `A/` 目录），引导开发者从零开始构建一个能够管理本地文件并进行智能分析的 AI Agent。
 
